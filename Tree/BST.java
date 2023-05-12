@@ -11,12 +11,17 @@ public class BST<Item>{
         public int item;
         // Left, Right and Father Nodes
         public Node sx, dx, father;
-        public Node( int x) {
+        /**
+         * Node constructor
+         * @param x item
+         */
+        public Node( int x ) {
+            // Set the item
             item = x;
+            // Set the children and the father of the node
             sx = dx = father = null;
         }
-        }
-        
+    }
     // Root of the Tree
     private Node root;
     /**
@@ -165,49 +170,93 @@ public class BST<Item>{
                 insertP(n.dx,x);
         }
     }
-    private void replace(Node n,Node m) {
+    /**
+     * Raplace the node n with the node m
+     * @param n to raplace
+     * @param m to be raplaced
+     */
+    private void replace( Node n, Node m ){
+        // If the left child of the father of n is n
         if (n.father.sx == n)
-            n.father.sx=m;
+            // Set the left child of the father of n as m
+            n.father.sx = m;
         else
+            // Set the right child of the father of n as m
             n.father.dx = m;
+        // If m is not null
         if (m != null)
+            // Set the father of m as the father of n
             m.father = n.father;
     }
-    //rimuove n che ha meno di 2 figli
+    /**
+     * It removes a node which had less than 2 children
+     * @param n removing
+     */
     private void remove(Node n) {
-        if (n.sx==null && n.dx==null)
-            replace(n,null);
+        // If the node hasn't got any children
+        if ( n.sx == null && n.dx == null )
+            // Replace the node with null
+            replace( n, null);
         else {
+            // Temporary node
             Node tmp;
-            if (n.sx!=null)
-                tmp=n.sx;
+            // If the left child isn't null
+            if ( n.sx != null )
+                // Assign the temporary node with the left child
+                tmp = n.sx;
             else
-                tmp=n.dx;
-            if (n== root){
-                 root=tmp;
-                 root.father=null;
-            }
-            else
+                // Assign the temporary node with the right child
+                tmp = n.dx;
+            // If the node is root
+            if ( n == root ){
+                // Assign the temporary node to the root
+                root = tmp;
+                // Assign null to the father of the root
+                root.father = null;
+            } else
+                // Replace the node with the temporary one
                 replace(n,tmp);
         }
     }
-    public void delete(int x){
-        deleteP( root,x);
+    /**
+     * Delete node with item x using the recoursive method DeleteP
+     * @param x to be deleted
+     * @see #deleteP( Node n, int x )
+     */
+    public void delete( int x ){
+        // Call the recoursive function deleteP
+        deleteP( root, x );
     }
-    private void deleteP(Node n, int x){
-        if (n != null) {
-            if (n.item >x)
+    /**
+     * Recoursively delete the node with the x item
+     * @param n node
+     * @param x item
+     */
+    private void deleteP( Node n, int x ){
+        // If n is not null
+        if ( n != null ) {
+            // If the item is greater than x
+            if ( n.item > x )
+                // Call recoursively this funtion with the left child of this node
                 deleteP(n.sx,x);
-            if (n.item <x)
+            // If the item is smaller than x
+            if ( n.item < x )
+                // Call recoursively this funtion with the right child of this node
                 deleteP(n.dx,x);
-            if (n.item ==x) {
-                //n ha meno di 2 figli
-                if (n.sx == null || n.dx==null)
+            // If the item equals to x
+            if ( n.item == x ){
+                // If the node has no children
+                if ( n.sx == null || n.dx == null )
+                    // Remove the node
                     remove(n);
-                else { //n ha 2 figli
-                Node min = minP(n);
-                n.item = min.item;
-                remove(min);} 
+                else { // The node has 2 children
+                    // Find the minor
+                    Node min = minP(n);
+                    // Set the minor item to the node item
+                    n.item = min.item;
+                    // Remove the minor
+                    remove(min);
+                } 
             } 
         }
     }        
