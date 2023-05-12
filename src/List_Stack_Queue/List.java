@@ -103,7 +103,7 @@ public class List<Item> {
     /**
      * It returns the item at position i
      * @param i position
-     * @return 
+     * @return item
      */
     public Item Read( int i ){
         // Counter
