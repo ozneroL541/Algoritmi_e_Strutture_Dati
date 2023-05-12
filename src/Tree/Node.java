@@ -1,4 +1,4 @@
-package Tree;
+package src.Tree;
 /**
  * An object of the <code>Node</code> class rapresents an <code>Item</code> and
  * a pointer to another <code>Node</code>.

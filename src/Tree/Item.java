@@ -1,4 +1,4 @@
-package Tree;
+package src.Tree;
 
 public class Item implements Comparable {
     private int x;

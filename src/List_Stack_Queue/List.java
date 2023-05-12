@@ -1,4 +1,4 @@
-package List_Stack_Queue;
+package src.List_Stack_Queue;
 
 /**
  * An object of the <code>List</code> class rapresents a list

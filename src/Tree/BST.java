@@ -1,4 +1,4 @@
-package Tree;
+package src.Tree;
 /**
  * An object of the <i>Binary Search Tree</i> class rapresents a tree of nodes
  * 
