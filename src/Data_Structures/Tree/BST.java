@@ -1,11 +1,11 @@
-package src.Tree;
+package src.Data_Structures.Tree;
 /**
  * An object of the <i>Binary Search Tree</i> class rapresents a tree of nodes
  * 
  * @author Lorenzo Radice
  * @version 1.0
  */
-public class BST<Item>{
+public class BST{
     private class Node{ 
         // Item
         public int item;

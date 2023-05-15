@@ -1,4 +1,4 @@
-package src.List_Stack_Queue;
+package src.Data_Structures.List_Stack_Queue;
 /**
  * An object of the <code>Stack</code> class rapresents a stack of <code>Node</code>s.
  * 

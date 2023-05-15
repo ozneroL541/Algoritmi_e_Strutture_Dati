@@ -1,4 +1,4 @@
-package src.List_Stack_Queue;
+package src.Data_Structures.List_Stack_Queue;
 /**
  * An object of the <code>Node</code> class rapresents an <code>Item</code> and
  * a pointer to another <code>Node</code>.
