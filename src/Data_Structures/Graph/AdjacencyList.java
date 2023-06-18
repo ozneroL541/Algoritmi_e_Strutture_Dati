@@ -16,6 +16,7 @@ public class AdjacencyList extends Graph {
     public AdjacencyList( int n ) {
         this.aList = new ArrayList[n];
         this.nodes_number = n;
+        this.edges_number = 0;
     }
     /**
      *  This method adds an oriented edge from the start node to node the end node
@@ -28,6 +29,7 @@ public class AdjacencyList extends Graph {
             int t = to - 1;
             if ( ! this.aList[f].contains(t) ) {
                 this.aList[f].add(t);
+                this.edges_number++;
             }
         }
     }
@@ -42,6 +44,7 @@ public class AdjacencyList extends Graph {
             int t = to - 1;
             if ( ! this.aList[f].contains(t) ) {
                 this.aList[f].remove(t);
+                this.edges_number--;
             }
         }
     }
