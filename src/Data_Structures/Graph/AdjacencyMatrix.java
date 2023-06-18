@@ -1,6 +1,6 @@
 package src.Data_Structures.Graph;
 
-public class AdjacencyMatrix {
+public class AdjacencyMatrix extends Graph {
     // Matrix
     private boolean [][] matrix = null;
     // Number of nodes
@@ -50,5 +50,24 @@ public class AdjacencyMatrix {
             }
         }
         return count;
+    }
+    @Override
+    public String toString() {
+        String out = "x";
+        for (int i = 0; i < matrix.length; i++) {
+            out += "\t" + (i + 1);
+        }
+        for (int i = 0; i < this.matrix.length; i++) {
+            for (int j = 0; j < this.matrix[0].length; j++) {
+                if ( j == 0 )
+                    out += "\n" + ( i + 1);
+                out += "\t";
+                if ( this.matrix[i][j] )
+                    out += "1";
+                else
+                    out += " ";
+            }
+        }
+        return out;
     }
 }
