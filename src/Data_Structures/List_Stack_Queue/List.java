@@ -1,5 +1,7 @@
 package src.Data_Structures.List_Stack_Queue;
 
+import javax.imageio.plugins.tiff.FaxTIFFTagSet;
+
 /**
  * An object of the <code>List</code> class rapresents a list
  * of nodes with items <code>Item</code> in them.
@@ -125,5 +127,21 @@ public class List<Item> {
         }
         // Returns the item found
         return (Item) pred.item;
+    }
+    /**
+     * Check if the item is in the list
+     * @param i item
+     * @return true if the item is in the list
+     */
+    public boolean contains(Item to) {
+        boolean f = false;
+        Node c = this.first;
+        while ( !f && c != null ) {
+            f = c.item.equals(to);
+        }
+        return f;
+    }
+    public void add(Item to) {
+        Insert(to, this.N);
     }        
 }
