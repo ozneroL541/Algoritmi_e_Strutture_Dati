@@ -30,7 +30,7 @@ public class AdjacencyList<Item> extends Graph {
      * @param from start node
      * @param to end node
      */
-    public void addEdge( Item from, Item to ) {
+    /*public void addEdge( Item from, Item to ) {
         int [] c = new int[2];
         c[0] = -1;
         c[1] = -1;
