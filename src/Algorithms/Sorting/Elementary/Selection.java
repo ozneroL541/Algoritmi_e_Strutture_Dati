@@ -2,7 +2,7 @@ package src.Algorithms.Sorting.Elementary;
 
 import src.Algorithms.Sorting.Sort;
 
-public class Selectionsort extends Sort{
+public class Selection extends Sort{
     public static void sort( Comparable[] a ){
         int N = a.length;
         // for every element of the array
