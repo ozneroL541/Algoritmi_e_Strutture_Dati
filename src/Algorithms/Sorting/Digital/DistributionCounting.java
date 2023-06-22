@@ -3,6 +3,7 @@ package src.Algorithms.Sorting.Digital;
 import src.Algorithms.Sorting.Sort;
 
 public class DistributionCounting extends Sort{
+    // All the elements must be int
     public static void sort( int[] a ) {
         int N, min, max, r;
         int[] count, b;
