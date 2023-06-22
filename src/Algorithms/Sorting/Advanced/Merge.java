@@ -9,8 +9,10 @@ public class Merge extends Sort {
         // merge of a[lo..mid] with a[mid+1..hi]
         Comparable[] aux = new Comparable[a.length];
         int i = lo, j = mid + 1;
+        // Creates a smaller array with hi lo
         for( int k = lo; k <= hi; k++ )
             aux[k] = a[k];
+        // Order the little array
         for( int k = lo; k <= hi; k++ )
             if( i > mid )
                 a[k] = aux[j++];
@@ -47,4 +49,12 @@ public class Merge extends Sort {
         return c;
     }
     */
+    public static void mergesort(Comparable[] a,int lo,int hi) {
+        if( hi <= lo )
+            return;
+        int mid = lo + ( hi - lo ) / 2;
+        mergesort( a, lo, mid);
+        mergesort( a, mid + 1, hi );
+        merge( a, lo, mid, hi );
+    }
 }
