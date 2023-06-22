@@ -80,5 +80,12 @@ public class Queue<Item>{
             return null;
         return (Item) first.item;
     }
+    /**
+     * It returns the lenght of the list
+     * @return lenght
+     */
+    public int lenght() {
+        return this.N;
+    }
 }
         
