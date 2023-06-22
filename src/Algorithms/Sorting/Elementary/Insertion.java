@@ -8,7 +8,8 @@ public class Insertion extends Sort {
         // for every element
         for( int i = 1; i < N; i++ ) {
             int j = i;
-            // while j is more than zero and a[j] is not the higher
+            // while j is more than zero
+            // and a[j] is minor than the previous
             while( j > 0 && less( a[j], a[j - 1] ) ) {
                 // Exchange j with the previous one
                 exch( a, j, j - 1 );
