@@ -53,6 +53,8 @@ public class AdjacencyList<Item> extends Graph {
      * @param from start node
      * @param to end node
      */
+    //TODO
+    /*
     public void removeEdge( int from, int to ) {
         if ( from > 0 && from <= this.nodes_number && to > 0 && to <= this.nodes_number ) {
             int f = from - 1;
@@ -96,5 +98,5 @@ public class AdjacencyList<Item> extends Graph {
                     u.Insert({v,w},1);
                 }
         }
-    }
+    }*/
 }
