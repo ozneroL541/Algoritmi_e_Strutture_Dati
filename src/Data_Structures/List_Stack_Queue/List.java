@@ -141,7 +141,29 @@ public class List<Item> {
         }
         return f;
     }
+    /**
+     * Add the item at the end of the list
+     * @param to item to add
+     */
     public void add(Item to) {
         Insert(to, this.N);
-    }       
+    }
+    /**
+     * Connect the last node of this list with the first of the list b
+     * @param b second list
+     */
+    public void Connect( List b ) {
+        if ( this.N < 1 ){
+            this.first = b.first;
+            this.N = 1;
+        }
+        
+        Node last = this.first;
+
+        while ( last.next != null ) {
+            last = last.next;
+        }
+
+        last.next = b.first;
+    }     
 }
