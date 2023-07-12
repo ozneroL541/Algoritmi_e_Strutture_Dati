@@ -11,7 +11,7 @@ public class Merge extends Sort {
      * @param mid   middle element of a
      * @param hi    last element of a
      */
-    public static void merge( Comparable[] a, int lo, int mid, int hi) {
+    public static void merge( Comparable[] a, int lo, int mid, int hi ) {
         // merge of a[lo..mid] with a[mid+1..hi]
         // Make a new array
         Comparable[] aux = new Comparable[a.length];
@@ -38,28 +38,48 @@ public class Merge extends Sort {
                 // k element of a assigned with aux[i] and increment i
                 a[k] = aux[i++];
     }
-    
-    public static List<Comparable> mergeL( List<Comparable> a, List<Comparable> b) {
+    /**
+     * It merges two ordered lists making a new ordered list
+     * @param a first list
+     * @param b second list
+     * @return merged list
+     */
+    public static List<Comparable> mergeL( List<Comparable> a, List<Comparable> b ) {
+        // Creates a new list
         List<Comparable> c = new List<Comparable>();
+        // If the first list is empty return just the second one
         if( a.isEmpty() )
             return b;
+        // If the second list is empty return just the first one
         if( b.isEmpty() )
             return a;
+        // Read the first item of the list
         Comparable x = a.Read(1);
         Comparable y = b.Read(1);
+        // While the pointer aren't null
         while( ( x != null ) && ( y != null ) )
+            // If x is lower than y
             if (less(x,y)) {
+                // Add x to the list
                 c.add(x);
+                // Delete x from the list
                 a.Delete(1);
-                x=a.Read(1);
+                // Read the following number
+                x = a.Read(1);
             } else {
+                // Add y to the list
                 c.add(y);
+                // Delete y from the list
                 b.Delete(1);
+                // Read the following number
                 y = b.Read(1);
             }
+        // If x is null
         if( x == null )
+            // Attach b to c
             c.Connect(b);
         else
+            // Attach a to c
             c.Connect(a);
         return c;
     }
