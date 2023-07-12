@@ -1,4 +1,4 @@
-package Algorithms.Sorting.Advanced;
+package Algorithms.Sorting.Advanced.Divide_et_Impera;
 
 import Algorithms.Sorting.Sort;
 import Data_Structures.List_Stack_Queue.List;

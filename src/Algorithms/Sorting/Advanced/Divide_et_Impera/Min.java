@@ -1,4 +1,4 @@
-package Algorithms.Sorting.Advanced;
+package Algorithms.Sorting.Advanced.Divide_et_Impera;
 
 public class Min {
     /**
