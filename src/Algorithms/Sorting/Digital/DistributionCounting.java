@@ -1,6 +1,6 @@
-package src.Algorithms.Sorting.Digital;
+package Algorithms.Sorting.Digital;
 
-import src.Algorithms.Sorting.Sort;
+import Algorithms.Sorting.Sort;
 
 public class DistributionCounting extends Sort{
     // All the elements must be int

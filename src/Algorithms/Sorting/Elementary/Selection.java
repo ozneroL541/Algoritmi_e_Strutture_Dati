@@ -1,6 +1,6 @@
-package src.Algorithms.Sorting.Elementary;
+package Algorithms.Sorting.Elementary;
 
-import src.Algorithms.Sorting.Sort;
+import Algorithms.Sorting.Sort;
 
 public class Selection extends Sort{
     public static void sort( Comparable[] a ){

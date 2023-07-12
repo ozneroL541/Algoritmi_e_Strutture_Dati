@@ -1,4 +1,4 @@
-package src.Algorithms.Sorting;
+package Algorithms.Sorting;
 
 public abstract class Sort {
     /**

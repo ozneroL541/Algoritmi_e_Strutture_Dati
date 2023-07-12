@@ -1,4 +1,4 @@
-package src.Data_Structures.List_Stack_Queue;
+package Data_Structures.List_Stack_Queue;
 
 import javax.imageio.plugins.tiff.FaxTIFFTagSet;
 

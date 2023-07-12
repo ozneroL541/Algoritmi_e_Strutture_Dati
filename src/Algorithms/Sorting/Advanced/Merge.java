@@ -1,8 +1,8 @@
-package src.Algorithms.Sorting.Advanced;
+package Algorithms.Sorting.Advanced;
 
 import java.util.List;
 
-import src.Algorithms.Sorting.Sort;
+import Algorithms.Sorting.Sort;
 
 public class Merge extends Sort {
     public static void merge( Comparable[] a, int lo, int mid, int hi) {

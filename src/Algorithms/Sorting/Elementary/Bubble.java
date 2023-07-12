@@ -1,8 +1,8 @@
-package src.Algorithms.Sorting.Elementary;
+package Algorithms.Sorting.Elementary;
 
 import java.net.Socket;
 
-import src.Algorithms.Sorting.Sort;
+import Algorithms.Sorting.Sort;
 
 public class Bubble extends Sort {
     public static void sort(Comparable[] a) {

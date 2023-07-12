@@ -1,7 +1,7 @@
-package src.Algorithms.Sorting.Digital;
+package Algorithms.Sorting.Digital;
 
-import src.Algorithms.Sorting.Sort;
-import src.Data_Structures.List_Stack_Queue.Queue;
+import Algorithms.Sorting.Sort;
+import Data_Structures.List_Stack_Queue.Queue;
 
 public class Bucket extends Sort {
     // TODO

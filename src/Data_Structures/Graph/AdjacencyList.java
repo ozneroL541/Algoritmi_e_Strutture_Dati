@@ -1,10 +1,10 @@
-package src.Data_Structures.Graph;
+package Data_Structures.Graph;
 
 import java.util.ArrayList;
 
-import src.Data_Structures.List_Stack_Queue.List;
-import src.Data_Structures.List_Stack_Queue.Node;
-import src.Data_Structures.List_Stack_Queue.Queue;
+import Data_Structures.List_Stack_Queue.List;
+import Data_Structures.List_Stack_Queue.Node;
+import Data_Structures.List_Stack_Queue.Queue;
 
 public class AdjacencyList<Item> extends Graph {
     // Number of nodes

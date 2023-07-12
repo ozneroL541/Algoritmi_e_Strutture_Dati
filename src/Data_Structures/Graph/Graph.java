@@ -1,4 +1,4 @@
-package src.Data_Structures.Graph;
+package Data_Structures.Graph;
 
 public abstract class Graph {
     // Number of nodes

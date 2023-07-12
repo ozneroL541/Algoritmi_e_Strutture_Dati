@@ -1,4 +1,4 @@
-package src.Data_Structures.Tree;
+package Data_Structures.Tree;
 /**
  * An object of the <i>Binary Search Tree</i> class rapresents a tree of nodes
  * 
