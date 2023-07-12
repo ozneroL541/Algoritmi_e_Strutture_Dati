@@ -83,12 +83,17 @@ public class Merge extends Sort {
             c.Connect(a);
         return c;
     }
-    public static void mergesort(Comparable[] a,int lo,int hi) {
+    public static void mergesort( Comparable[] a, int lo, int hi ) {
+        // If high is lower than low stop
         if( hi <= lo )
             return;
+        // calculate the middle
         int mid = lo + ( hi - lo ) / 2;
-        mergesort( a, lo, mid);
+        // Recoursively mergesort the first part of the array
+        mergesort( a, lo, mid );
+        // Recoursively mergesort the second part of the array
         mergesort( a, mid + 1, hi );
+        // Merge the two part of the array
         merge( a, lo, mid, hi );
     }
 }
