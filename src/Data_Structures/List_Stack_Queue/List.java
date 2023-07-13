@@ -133,7 +133,7 @@ public class List<Item> {
      * @param i item
      * @return true if the item is in the list
      */
-    public boolean contains(Item to) {
+    public boolean Contains(Item to) {
         boolean f = false;
         Node c = this.first;
         while ( !f && c != null ) {
@@ -145,7 +145,7 @@ public class List<Item> {
      * Add the item at the end of the list
      * @param to item to add
      */
-    public void add(Item to) {
+    public void Add(Item to) {
         Insert(to, this.N);
     }
     /**
@@ -153,17 +153,23 @@ public class List<Item> {
      * @param b second list
      */
     public void Connect( List b ) {
+        // If the list is void 
         if ( this.N < 1 ){
+            // The list is now b
             this.first = b.first;
-            this.N = 1;
+            this.N = b.N;
+        } else {
+            // Initialize the list pointer
+            Node last = this.first;
+            // While it is not at the end of the list
+            while ( last.next != null ) {
+                // Pass to the next node
+                last = last.next;
+            }
+            // Connect the other list with the tail of this
+            last.next = b.first;
+            // Increment the node number
+            this.N += b.N;
         }
-        
-        Node last = this.first;
-
-        while ( last.next != null ) {
-            last = last.next;
-        }
-
-        last.next = b.first;
     }     
 }

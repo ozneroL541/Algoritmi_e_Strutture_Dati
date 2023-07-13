@@ -1,4 +1,4 @@
-package Algorithms.Sorting.Advanced;
+package Algorithms.Sorting.Advanced.Quicksort;
 
 import Algorithms.Sorting.Sort;
 import Data_Structures.List_Stack_Queue.Stack;

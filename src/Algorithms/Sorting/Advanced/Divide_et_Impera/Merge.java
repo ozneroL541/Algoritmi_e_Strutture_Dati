@@ -61,14 +61,14 @@ public class Merge extends Sort {
             // If x is lower than y
             if (less(x,y)) {
                 // Add x to the list
-                c.add(x);
+                c.Add(x);
                 // Delete x from the list
                 a.Delete(1);
                 // Read the following number
                 x = a.Read(1);
             } else {
                 // Add y to the list
-                c.add(y);
+                c.Add(y);
                 // Delete y from the list
                 b.Delete(1);
                 // Read the following number
