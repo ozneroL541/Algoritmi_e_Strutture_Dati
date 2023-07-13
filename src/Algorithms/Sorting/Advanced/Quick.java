@@ -1,8 +1,25 @@
 package Algorithms.Sorting.Advanced;
 
-import Algorithms.Sorting.Advanced.Partition;
+import Algorithms.Sorting.Sort;
 
-public class Quick extends Partition {
+public class Quick extends Sort {
+    protected static int partition( Comparable[] a, int l, int r ) {
+        int i = l,j = r + 1;
+        Comparable v = a[l];
+        while ( true ){
+            while ( less( a[++i], v ) )
+                if( i == r )
+                    break;
+        while ( less( v, a[--j] ) )
+            if( j == l )
+                break;;
+        if ( i >= j ) 
+            break;
+        exch( a, i, j );
+        }
+        exch( a, l, j );
+        return j;
+    }
     public static void sort( Comparable[] a ){
         sort( a, 0, a.length-1 );
     }
