@@ -39,14 +39,33 @@ public class Quick extends Sort {
         // Return j
         return j;
     }
+    /**
+     * Execute a recoursive method
+     * @param a array of comparables
+     */
     public static void sort( Comparable[] a ){
+        // Execute the recoursive method
         sort( a, 0, a.length - 1 );
     }
+    /**
+     * Partition the first part of the array,
+     * than recoursively call this method on
+     * the first and on the second part of the array.
+     * Summing up this method use partition on every
+     * element in the array.
+     * @param a array
+     * @param l lower element of the array
+     * @param r higher element of the array
+     */
     private static void sort( Comparable[] a, int l, int r ) {
+        // Stop if r is lower than l
         if ( r <= l )
             return;
-    int j = partition( a, l, r );
-    sort( a, l, j-1 );
-    sort( a, j+1, r );
+        // Partition the array
+        int j = partition( a, l, r );
+        // Quicksort the first part of the array
+        sort( a, l, j-1 );
+        // Quicksort the second part of the array
+        sort( a, j+1, r );
     }
 }
