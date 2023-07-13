@@ -63,8 +63,11 @@ public class Stack<Item> {
      * @return the first item
      */
     public Item top(){
+        // If the stack is empty
         if ( isEmpty() )
+            // Return null
             return null;
+        // Return the first item of the stack
         return (Item) first.item;
     }
 }

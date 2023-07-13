@@ -1,6 +1,7 @@
 package Algorithms.Sorting.Advanced;
 
 import Algorithms.Sorting.Sort;
+import Data_Structures.List_Stack_Queue.Stack;
 
 public class Quick extends Sort {
     /**
@@ -67,5 +68,52 @@ public class Quick extends Sort {
         sort( a, l, j-1 );
         // Quicksort the second part of the array
         sort( a, j+1, r );
+    }
+    /**
+     * Iterative version of Quicksort
+     * @param a array
+     * @param l lower element of the array
+     * @param r higher element of the array
+     */
+    private static void sortIt( Comparable[] a, int l, int r ){
+        int i;
+        Stack<Integer> s = new Stack<Integer>();
+        // if l is bigger than r stop the execution
+        if( l >= r )
+            return;
+        // Insert l and r in the stack
+        s.push(l);
+        s.push(r);
+        // Whil the stack is not empty
+        while( ! s.isEmpty() ){
+            // Pop on r
+            r = s.top();
+            s.pop();
+            // Pop on l
+            l = s.top();
+            s.pop();
+            // i equals the return of partition
+            i = partition( a, l, r );
+            // If i -l is bigger than r - i
+            if( i - l > r - i ){
+                // Push l
+                s.push(l);
+                // Push i-1
+                s.push(i-1);
+                // Push i+1
+                s.push(i+1);
+                // Push r
+                s.push(r);
+            }else{
+                // Push i+1
+                s.push(i+1);
+                // Push r
+                s.push(r);
+                // Push l
+                s.push(l);
+                // Push i-1
+                s.push(i-1);
+            }
+        }
     }
 }
