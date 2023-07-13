@@ -4,7 +4,7 @@ import Data_Structures.List_Stack_Queue.List;
 
 public class QuickB extends Quick {
     /**
-     * 
+     * Partition on list for Bentley-Mcllroy Quicksort.
      * @param a
      * @return
      */
@@ -28,7 +28,8 @@ public class QuickB extends Quick {
         return c;
     }
     /**
-     * @param a
+     * Bentley-Mcllroy Quicksort on list.
+     * @param a list
      * @return
      */
     public static List<Comparable> sort( List<Comparable> a ){
