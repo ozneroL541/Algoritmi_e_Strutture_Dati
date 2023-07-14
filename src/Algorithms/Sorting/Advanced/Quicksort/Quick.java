@@ -19,12 +19,12 @@ public class Quick extends Sort {
         Comparable v = a[l];
         // For ever 
         while ( true ){
-            // Increment i and go on if a[i] is less than v
+            // Increment i and go on if a[i] is less than pivot
             while ( less( a[++i], v ) )
-                // Stop when i reaches r
+                // Stop when i reaches the end
                 if( i == r )
                     break;
-            // Decrease j and go on if a[j] is more than v
+            // Decrease j and go on if a[j] is more than pivot
             while ( less( v, a[--j] ) )
                 // Stop when j reaches l
                 if( j == l )

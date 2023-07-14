@@ -25,11 +25,11 @@ public class QuickB extends Quick {
             if ( less( x, pivot ) )
                 // Add x to c[0]
                 c[0].Add(x);
-            // If pivot is less than x
+            // If x is more than pivot
             else if ( less( pivot, x ) )
                 // Add x to c[2]
                 c[2].Add(x);
-            // Otherwise
+            // If x equals pivot
             else
                 // Add x to c[1]
                 c[1].Add(x);
