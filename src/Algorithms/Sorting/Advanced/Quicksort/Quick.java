@@ -12,7 +12,7 @@ public class Quick extends Sort {
      * @param r last index of the array
      * @return pivot
      */
-    protected static int partition( Comparable[] a, int l, int r ) {
+    public static int partition( Comparable[] a, int l, int r ) {
         // Set i as the beginning and j ad the end
         int i = l, j = r + 1;
         // Set the pivot
