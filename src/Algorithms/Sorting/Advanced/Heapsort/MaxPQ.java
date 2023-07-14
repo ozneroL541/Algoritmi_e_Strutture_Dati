@@ -2,7 +2,7 @@ package Algorithms.Sorting.Advanced.Heapsort;
 import java.lang.Comparable;
 import Algorithms.Sorting.Sort;
 
-public class MaxPQ<Comparable> extends Sort {
+public class MaxPQ extends Sort {
     private Comparable[] pq;
     private int n = 0;
     public MaxPQ ( int dim ){
