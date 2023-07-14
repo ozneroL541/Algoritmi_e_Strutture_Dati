@@ -8,14 +8,14 @@ public class Quick extends Sort {
      * The array is divided in elements bigger
      * and smaller than the pivot.
      * @param a array
-     * @param l pivot
-     * @param r last element of the array
+     * @param l pivot index
+     * @param r last index of the array
      * @return pivot
      */
     protected static int partition( Comparable[] a, int l, int r ) {
         // Set i as the beginning and j ad the end
         int i = l, j = r + 1;
-        // Copy the array in v
+        // Set the pivot
         Comparable v = a[l];
         // For ever 
         while ( true ){
