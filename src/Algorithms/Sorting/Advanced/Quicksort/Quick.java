@@ -5,7 +5,7 @@ import Data_Structures.List_Stack_Queue.Stack;
 
 public class Quick extends Sort {
     /**
-     * The array is divided in elements bigger
+     * Divide the array in elements bigger
      * and smaller than the pivot.
      * @param a array
      * @param l pivot index
@@ -19,17 +19,19 @@ public class Quick extends Sort {
         Comparable v = a[l];
         // For ever 
         while ( true ){
-            // Increment i and go on if a[i] is less than pivot
+            // Increase i
+            // Go on while a[i] is less than pivot
             while ( less( a[++i], v ) )
-                // Stop when i reaches the end
+                // Stop if i reaches the end
                 if( i == r )
                     break;
-            // Decrease j and go on if a[j] is more than pivot
+            // Decrease j 
+            // Go on while a[j] is more than pivot
             while ( less( v, a[--j] ) )
-                // Stop when j reaches l
+                // Stop if j reaches l
                 if( j == l )
                     break;
-            // Stop if i is more than j
+            // Exit from while if i is more than j
             if ( i >= j ) 
                 break;
             // Exchange i with j
@@ -41,7 +43,7 @@ public class Quick extends Sort {
         return j;
     }
     /**
-     * Execute a recoursive method
+     * Execute the recoursive method
      * @param a array of comparables
      */
     public static void sort( Comparable[] a ){
@@ -59,7 +61,7 @@ public class Quick extends Sort {
      * @param r higher element of the array
      */
     private static void sort( Comparable[] a, int l, int r ) {
-        // Stop if r is lower than l
+        // Stop if r is less than l
         if ( r <= l )
             return;
         // Partition the array
