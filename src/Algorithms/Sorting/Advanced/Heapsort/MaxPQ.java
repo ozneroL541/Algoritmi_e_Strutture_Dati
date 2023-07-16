@@ -3,7 +3,9 @@ import java.lang.Comparable;
 import Algorithms.Sorting.Sort;
 
 public class MaxPQ extends Sort {
+    // Maximum Priority Queue array
     private Comparable[] pq;
+    // Lenght of the array
     private int n = 0;
     /**
      * Constructor of Maximum Priority Queue
@@ -29,6 +31,9 @@ public class MaxPQ extends Sort {
     }
     /**
      * Insert v at the first void space in the array
+     * Complexity
+     * O(1) best
+     * O(log(n)) worst
      * @param v item to insert
      */
     public void insert(Comparable v){
@@ -41,6 +46,8 @@ public class MaxPQ extends Sort {
     /**
      * Read the element of the heap with more priority
      * @return first element
+     * Complexity
+     * O(1)
      */
     public Comparable read(){
         // Return the first element of the array
@@ -49,6 +56,9 @@ public class MaxPQ extends Sort {
     /**
      * Delete the element of the heap with more priority
      * and return it.
+     * Complexity
+     * O(1) best
+     * O(log(n)) worst
      * @return first element
      */
     public Comparable delete(){
@@ -59,19 +69,35 @@ public class MaxPQ extends Sort {
         exch(1,n--);
         // Delete the last element of the array
         pq[n+1] = null;
+        //
         sink(1);
         return max;
     }
+    /**
+     * Check if pq[i] is less than pq[j]
+     * @param i first index
+     * @param j second index
+     * @return true if pq[i] is less than pq[j]
+     */
     private boolean less(int i,int j){
         return pq[i].compareTo(pq[j]) < 0;
     }
+    /**
+     * Exchange pq[i] with pq[j]
+     * @param i first index
+     * @param j second index
+     */
     private void exch(int i,int j){
+        // Auxiliary variable
         Comparable t = pq[i];
         pq[i] = pq[j];
         pq[j] = t;
     }
     /**
-     * Sort the priority of the array
+     * Sort the priority of the array.
+     * Complexity
+     * O(1) best
+     * O(log(n)) worst
      * @param k
      */
     private void swim(int k){
@@ -86,6 +112,9 @@ public class MaxPQ extends Sort {
     }
     /**
      * Sort the array starting with k
+     * Complexity
+     * O(1) best
+     * O(log(n)) worst
      * @param k starting point
      */
     private void sink(int k){
@@ -108,12 +137,23 @@ public class MaxPQ extends Sort {
             k = j;
         }
     }
+    /**
+     * Bottom Up build.
+     * 
+     * @param a
+     */
     public void buildBU( Comparable[] a){
+        // If the lenght of a is smaller than pq
         if( a.length < pq.length ){
+            // Assign the lenght of a to n
             n = a.length;
+            // For every element of a
             for( int i = 0; i < a.length; i++ )
+                // Assign a[i] to pq[i+1]
                 pq[i+1] = a[i];
+            // From n/2 to 1
             for( int i = n/2; i >= 1; i-- )
+                // Sink i
                 sink(i);
         }
     }
