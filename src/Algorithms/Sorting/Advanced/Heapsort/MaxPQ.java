@@ -139,7 +139,8 @@ public class MaxPQ extends Sort {
     }
     /**
      * Bottom Up build.
-     * 
+     * Complexity
+     * Theta(n)
      * @param a
      */
     public void buildBU( Comparable[] a){
