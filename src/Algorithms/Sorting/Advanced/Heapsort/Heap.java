@@ -5,7 +5,12 @@ import Algorithms.Sorting.Sort;
 public class Heap extends Sort {
     /**
      * Sort the array using Heapsort.
-     * 
+     * Make a Maximum Priority Queue from the array.
+     * Delete the Heap from the back and assign
+     * the elements to the array.
+     * Complexity
+     * O(nlog(n))
+     * Not stable algorithm
      * @param a array
      */
     public static void sort(Comparable[] a){
