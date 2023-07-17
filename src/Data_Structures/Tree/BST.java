@@ -6,6 +6,7 @@ package Data_Structures.Tree;
  * @version 1.0
  */
 public class BST{
+    // Node where store the items
     private class Node{ 
         // Item
         public int item;
@@ -259,5 +260,5 @@ public class BST{
                 } 
             } 
         }
-    }        
+    }
 }
