@@ -1,2 +1,13 @@
-src.List_Stack_Queue
-src.Tree
+Algorithms.DinamicCoding
+Algorithms.Examples
+Algorithms.Sorting
+Algorithms.Sorting.Advanced.Divide_et_Impera
+Algorithms.Sorting.Advanced.Heapsort
+Algorithms.Sorting.Advanced.Quicksort
+Algorithms.Sorting.Digital
+Algorithms.Sorting.Elementary
+Data_Structures.Graph
+Data_Structures.Hash
+Data_Structures.Heap
+Data_Structures.List_Stack_Queue
+Data_Structures.Tree
