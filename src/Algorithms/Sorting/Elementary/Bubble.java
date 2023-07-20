@@ -25,7 +25,7 @@ public class Bubble extends Sort {
         // For every element of the array
         // Stop if there is a cycle without changes
         for( int i = 0; ! ex && i < N; i++ ) {
-            // se exchange as false
+            // Set exchange as false
             ex = false;
             // Starting from the back of the array
             // going back
