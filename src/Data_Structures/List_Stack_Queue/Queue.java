@@ -87,5 +87,13 @@ public class Queue<Item>{
     public int lenght() {
         return this.N;
     }
+    /**
+     * Create a chain with two queue
+     * @param o second queue
+     */
+    public void chain( Queue<String> o ) {
+        // Set the next node of the queue as the first one of the other one
+        this.last.next = o.first;
+    }
 }
         
