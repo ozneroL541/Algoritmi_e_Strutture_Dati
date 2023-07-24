@@ -1,4 +1,7 @@
 package Data_Structures.Tree;
+
+import Data_Structures.List_Stack_Queue.Queue;
+
 /**
  * An object of the <i>Binary Search Tree</i> class rapresents a tree of nodes
  * 
@@ -22,6 +25,12 @@ public class BST{
             // Set the children and the father of the node
             sx = dx = father = null;
         }
+        /**
+         * Visit the node
+         */
+        public void visit() {
+            System.out.print(" " + this.item + " ");
+        }
     }
     // Root of the Tree
     private Node root;
@@ -29,7 +38,7 @@ public class BST{
      * It build a Binary Search Tree setting the root as null
      */
     public BST() {
-        root = null;
+        this.root = null;
     }
     /**
      * It searches recoursively the integer x
@@ -81,27 +90,153 @@ public class BST{
         return n; 
     }
     /**
-     * It prints the items recoursively using private method inorderP
-     * @see #inorderP(Node n)
+     * Check if the tree has nodes
+     * @return true if the tree is empty
      */
-    public void inorder(){
+    public boolean isEmpty() {
+        return this.root == null;
+    }
+    /**
+     * Visit the tree with different methods
+     * @param i option
+     */
+    public void visiting( int i ) {
+        // Choose the menu
+        switch (i) {
+            // PreOrder
+            case 1:
+                preOrderP(this.root);
+                break;
+            // InOrder
+            case 2:
+                inOrderP(this.root);
+                break;
+            // PostOrder
+            case 3:
+                postOrderP(this.root);
+                break;
+            // LevelOrder
+            case 4:
+                levelOrderP(this.root);
+                break;
+            default:
+                break;
+        }
+    }
+    /**
+     * Visit the nodes recoursively using private method preOrderP.
+     * Firstly visit the node than its children
+     * @see #preOrderP(Node n)
+     */
+    public void preOrder() {
         // Call recoursive method with root as first node
-        inorderP(root);
+        preOrderP(this.root);
+        System.out.println();
+    }
+    /**
+     * Visit the nodes in PreOrder.
+     * Firstly visit the node than visit the children
+     * @param r current node
+     */
+    private void preOrderP( Node r ) {
+        // If the node is not null
+        if (r != null) {
+            // Visit the node
+            r.visit();
+            // Call the method on the left child
+            preOrderP(r.sx);
+            // Call the method on the right child
+            postOrderP(r.dx);
+        }
+    }
+    /**
+     * Visit the nodes recoursively using private method inOrderP.
+     * Visit the nodes in order.
+     * @see #inOrderP(Node n)
+     */
+    public void inOrder(){
+        // Call recoursive method with root as first node
+        inOrderP(this.root);
         System.out.println(); 
     }
     /**
-     * It recoursively prints all the node's items in order
+     * Recoursively visits nodes in order
      * @param n node
      */
-    private void inorderP(Node n){
+    private void inOrderP(Node n){
         // If the node is not null continue
         if( n != null ){
             // Call the same function with left node as parameter 
-            inorderP(n.sx); 
-            // Print the item
-            System.out.print(" "+n.item+" ");
+            inOrderP(n.sx); 
+            // Visit the node
+            n.visit();
             // Call the same function with right node as parameter 
-            inorderP(n.dx); 
+            inOrderP(n.dx); 
+        }
+    }
+    /**
+     * Visit the nodes recoursively using private method postOrderP.
+     * Firstly visit the children than the node
+     * @see #postOrderP(Node n)
+     */
+    public void postOrder() {
+        // Call recoursive method with root as first node
+        postOrderP(this.root);
+        System.out.println();
+    }
+    /**
+     * Visit the nodes in PreOrder.
+     * Firstly visit the children than visit the node.
+     * @param r current node
+     */
+    private void postOrderP( Node r ) {
+        // If the node is not null
+        if (r != null) {
+            // Call the method on the left child
+            postOrderP(r.sx);
+            // Call the method on the right child
+            postOrderP(r.dx);
+            // Visit the node
+            r.visit();
+        }
+    }
+    /**
+     * Visit the nodes recoursively using private method levelOrderP.
+     * Visit every level of the tree from high to down, from left to right.
+     * @see #preOrderP(Node n)
+     */
+    public void levelOrder() {
+        // Call recoursive method with root as first node
+        levelOrderP(this.root);
+        System.out.println();
+    }
+    /**
+     * Visit the nodes in levelOrder.
+     * Visiti every level.
+     * @param r current node
+     */
+    private void levelOrderP( Node r ) {
+        // Support queue
+        Queue<Node> q = new Queue<Node>();
+        // If r is not null enqueue r
+        if( r != null )
+            q.enqueue(r);
+        // While the queue is not empty
+        while( !q.isEmpty() ) {
+            // Set r as the front of the queue
+            r = q.front();
+            // Dequeue
+            q.dequeue();
+            // Visit r
+            r.visit();
+            // If r has got a left child
+            if( r.sx != null )
+                // Enqueue the left child
+                q.enqueue(r.sx);
+            // If r has got a right child
+            if( r.dx != null )
+                // Enqueue the right child
+                q.enqueue(r.dx);
         }
     }
     /**
