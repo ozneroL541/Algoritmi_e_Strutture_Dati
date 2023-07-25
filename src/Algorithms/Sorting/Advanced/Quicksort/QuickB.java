@@ -4,6 +4,34 @@ import Data_Structures.List_Stack_Queue.List;
 
 public class QuickB extends Quick {
     /**
+     * Bentley-Mcllroy Quicksort on list
+     * 
+     * @param a list of comparables
+     * @return the sorted list
+     */
+    public static List<Comparable> sort( List<Comparable> a ){
+        // Support array of lists
+        List<Comparable> c[];
+        // If the list lenght is one or less it is already sorted
+        if ( a.length() <= 1 )
+            return a;
+        // Partition on a
+        c = BPart(a);
+        // If the first list is not null
+        if ( c[0] != null )
+            // Recoursively Quicksort it
+            c[0] = sort( c[0] );
+        // If the third list is not null
+        if ( c[2] != null )
+            // Recoursively Quicksort it
+            c[2] = sort( c[2] );
+        // Connect all the lists together
+        c[0].Connect( c[1] );
+        c[0].Connect( c[2] );
+        // Return the sorted list
+        return c[0];
+    }
+    /**
      * Partition on list for Bentley-Mcllroy Quicksort.
      * @param a list of Comparables
      * @return Three lists
@@ -40,32 +68,5 @@ public class QuickB extends Quick {
         }
         // Returns the array of lists
         return c;
-    }
-    /**
-     * Bentley-Mcllroy Quicksort on list.
-     * @param a list
-     * @return the sorted list
-     */
-    public static List<Comparable> sort( List<Comparable> a ){
-        // Support array of lists
-        List<Comparable> c[];
-        // If the list lenght is one or less it is already sorted
-        if ( a.length() <= 1 )
-            return a;
-        // Partition on a
-        c = BPart(a);
-        // If the first list is not null
-        if ( c[0] != null )
-            // Recoursively Quicksort it
-            c[0] = sort( c[0] );
-        // If the third list is not null
-        if ( c[2] != null )
-            // Recoursively Quicksort it
-            c[2] = sort( c[2] );
-        // Connect all the lists together
-        c[0].Connect( c[1] );
-        c[0].Connect( c[2] );
-        // Return the sorted list
-        return c[0];
     }
 }

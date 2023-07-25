@@ -16,7 +16,7 @@ public class Merge extends Sort {
     public static void sort( Comparable[] a ) {
         int lo = 0;
         int hi = a.length;
-        mergesort( a, lo, hi );
+        mergesort( a, lo, hi - 1 );
     }
     /**
      * Divide the array in hald and mergesort them.

@@ -5,50 +5,20 @@ import Data_Structures.List_Stack_Queue.Stack;
 
 public class Quick extends Sort {
     /**
-     * Divide the array in elements bigger
-     * and smaller than the pivot.
-     * @param a array
-     * @param l pivot index
-     * @param r last index of the array
-     * @return pivot
-     */
-    public static int partition( Comparable[] a, int l, int r ) {
-        // Set i as the beginning and j ad the end
-        int i = l, j = r + 1;
-        // Set the pivot
-        Comparable v = a[l];
-        // For ever 
-        while ( true ){
-            // Increase i
-            // Go on while a[i] is less than pivot
-            while ( less( a[++i], v ) )
-                // Stop if i reaches the end
-                if( i == r )
-                    break;
-            // Decrease j 
-            // Go on while a[j] is more than pivot
-            while ( less( v, a[--j] ) )
-                // Stop if j reaches l
-                if( j == l )
-                    break;
-            // Exit from while if i is more than j
-            if ( i >= j ) 
-                break;
-            // Exchange i with j
-            exch( a, i, j );
-        }
-        // Exchange l with j
-        exch( a, l, j );
-        // Return j
-        return j;
-    }
-    /**
-     * Execute the recoursive method
+     * Quicksort
+     * 
+     * Complexity
+     * Worst
+     * N. Comparisons:  Theta(n^2)
+     * Best
+     * N. Comparisons:  Theta(n*log(n))
+     * Average
+     * N. Comparisons:  Theta(2*ln(n))
      * @param a array of comparables
      */
     public static void sort( Comparable[] a ){
         // Execute the recoursive method
-        sort( a, 0, a.length - 1 );
+        quicksort( a, 0, a.length - 1 );
     }
     /**
      * Partition the first part of the array,
@@ -60,20 +30,29 @@ public class Quick extends Sort {
      * @param l lower element of the array
      * @param r higher element of the array
      */
-    private static void sort( Comparable[] a, int l, int r ) {
+    private static void quicksort( Comparable[] a, int l, int r ) {
         // Stop if r is less than l
         if ( r <= l )
             return;
         // Partition the array
         int j = partition( a, l, r );
         // Quicksort the first part of the array
-        sort( a, l, j-1 );
+        quicksort( a, l, j-1 );
         // Quicksort the second part of the array
-        sort( a, j+1, r );
+        quicksort( a, j+1, r );
     }
     /**
      * Iterative version of Quicksort
-     * @param a array
+     * 
+     * Complexity
+     * Worst
+     * N. Comparisons:  Theta(n^2)
+     * Best
+     * N. Comparisons:  Theta(n*log(n))
+     * Average
+     * N. Comparisons:  Theta(2*ln(n))
+     * @param a array of comparables
+     * @param a array of comparables
      * @param l lower element of the array
      * @param r higher element of the array
      */
@@ -117,5 +96,45 @@ public class Quick extends Sort {
                 s.push(i-1);
             }
         }
+    }
+    /**
+     * Divide the array in elements bigger and smaller than the pivot.
+     * 
+     * Complexity
+     * N. Comparisons:  Theta(n)
+     * @param a array
+     * @param l pivot index
+     * @param r last index of the array
+     * @return pivot
+     */
+    public static int partition( Comparable[] a, int l, int r ) {
+        // Set i as the beginning and j ad the end
+        int i = l, j = r + 1;
+        // Set the pivot
+        Comparable v = a[l];
+        // For ever 
+        while ( true ){
+            // Increase i
+            // Go on while a[i] is less than pivot
+            while ( less( a[++i], v ) )
+                // Stop if i reaches the end
+                if( i == r )
+                    break;
+            // Decrease j 
+            // Go on while a[j] is more than pivot
+            while ( less( v, a[--j] ) )
+                // Stop if j reaches l
+                if( j == l )
+                    break;
+            // Exit from while if i is more than j
+            if ( i >= j ) 
+                break;
+            // Exchange i with j
+            exch( a, i, j );
+        }
+        // Exchange l with j
+        exch( a, l, j );
+        // Return j
+        return j;
     }
 }
