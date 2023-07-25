@@ -5,7 +5,44 @@ import Data_Structures.List_Stack_Queue.List;
 
 public class Merge extends Sort {
     /**
+     * Mergesort
+     * It is stable.
+     * 
+     * Complexity
+     * N. Comparisons:  Theta(n)
+     * N. Operations:   Theta(n*log(n))
+     * @param a array of comparables
+     */
+    public static void sort( Comparable[] a ) {
+        int lo = 0;
+        int hi = a.length;
+        mergesort( a, lo, hi );
+    }
+    /**
+     * Divide the array in hald and mergesort them.
+     * At the end merge the two arrays.
+     * Summing up merge al the elements in pairs
+     * @param a array
+     * @param lo lower index
+     * @param hi higher index
+     */
+    public static void mergesort( Comparable[] a, int lo, int hi ) {
+        // If high is lower than low stop
+        if( hi <= lo )
+            return;
+        // calculate the middle
+        int mid = lo + ( hi - lo ) / 2;
+        // Recoursively mergesort the first part of the array
+        mergesort( a, lo, mid );
+        // Recoursively mergesort the second part of the array
+        mergesort( a, mid + 1, hi );
+        // Merge the two part of the array
+        merge( a, lo, mid, hi );
+    }
+    /**
      * It orders an array which is made up of two ordered array chained together.
+     * Complexity
+     * T = O(n)
      * @param a     array
      * @param lo    first element of a
      * @param mid   middle element of a
@@ -82,35 +119,5 @@ public class Merge extends Sort {
             // Attach a to c
             c.Connect(a);
         return c;
-    }
-    /**
-     * Divide the array in hald and mergesort them.
-     * At the end merge the two arrays.
-     * Summing up merge al the elements in pairs
-     * @param a array
-     * @param lo lower index
-     * @param hi higher index
-     */
-    public static void mergesort( Comparable[] a, int lo, int hi ) {
-        // If high is lower than low stop
-        if( hi <= lo )
-            return;
-        // calculate the middle
-        int mid = lo + ( hi - lo ) / 2;
-        // Recoursively mergesort the first part of the array
-        mergesort( a, lo, mid );
-        // Recoursively mergesort the second part of the array
-        mergesort( a, mid + 1, hi );
-        // Merge the two part of the array
-        merge( a, lo, mid, hi );
-    }
-    /**
-     * Initialize the mergesort and execute it.
-     * @param a array of comparables
-     */
-    public static void sort( Comparable[] a ) {
-        int lo = 0;
-        int hi = a.length;
-        mergesort( a, lo, hi );
     }
 }
