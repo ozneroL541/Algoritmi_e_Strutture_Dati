@@ -3,7 +3,16 @@ package Algorithms.Sorting.Digital;
 import Algorithms.Sorting.Sort;
 
 public class DistributionCounting extends Sort{
-    // All the elements must be int
+    /**
+     * Distribution Counting
+     * All the elements of the array mus be integers.
+     * N = number of elements
+     * r = number of repetitions
+     * 
+     * Complexity
+     * N. Operations:  Theta( N + r )
+     * @param a array of integers
+     */
     public static void sort( int[] a ) {
         int N, min, max, r;
         int[] count, b;

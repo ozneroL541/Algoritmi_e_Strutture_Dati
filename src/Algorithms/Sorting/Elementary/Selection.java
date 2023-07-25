@@ -3,6 +3,15 @@ package Algorithms.Sorting.Elementary;
 import Algorithms.Sorting.Sort;
 
 public class Selection extends Sort{
+    /**
+     * Selectionsort
+     * 
+     * Complexity
+     * N. Comparisons:  Theta(n^2)
+     * N. Exchanges:    Theta(n)
+     * N. Operations:   Theta(n^2)
+     * @param a array of comparables
+     */
     public static void sort( Comparable[] a ){
         int N = a.length;
         // for every element of the array

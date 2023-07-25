@@ -6,11 +6,24 @@ import Data_Structures.List_Stack_Queue.Queue;
 import Algorithms.Sorting.Elementary.Bubble;
 
 public class Bucket extends Sort {
-    // Lenght of the alphabet
+    // Cardinality of the alphabet
     private static int NSIMB = 0;
     // Alphabet
     private static Character [] alphabet;
-    public static void sort( Queue<String> l) {
+    /**
+     * Distribution Counting
+     * All the strings of the queue must have the same number of letters and must belong to the same alphabet.
+     * It is stable.
+     * It is not adaptive.
+     * k = lenght of words
+     * m = cardinality of the alphabet
+     * n = number of words
+     * 
+     * Complexity
+     * N. Operations:  Theta( k*(n+m) )
+     * @param l queue of strings
+     */
+    public static void sort( Queue<String> l ) {
         // Initialize the alphabet
         Alphabet(l);
         // String w
