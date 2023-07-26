@@ -49,7 +49,8 @@ public class HashTable {
         int i = Hash(e.key);
         int j = 0;
         while( j <= DIMTAB && Tab[i] != VOID && Tab[i] != e ){
-            i = (i+1)%DIMTAB; j++;
+            i = (i+1)%DIMTAB;
+            j++;
         }
         if ( Tab[i] == e ){
             Tab[i] = DELETED;

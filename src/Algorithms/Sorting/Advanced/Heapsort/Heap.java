@@ -8,6 +8,7 @@ public class Heap extends Sort {
      * Make a Maximum Priority Queue from the array.
      * Delete the Heap from the back and assign
      * the elements to the array.
+     * 
      * Complexity
      * O(nlog(n))
      * Not stable algorithm
